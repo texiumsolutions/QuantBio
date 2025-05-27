@@ -1,0 +1,7 @@
+/home/texsols/QuantBio/algorithms/protein-folding/plot_protein_folding.py:33: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  plt.legend()
+construct the energy Hamiltonian
+the constructing time: 0.77 s
+count of z gates:  5120
+start to execute VQE ... 
+bitstring: 0100101011, value: (-620+0j), executing time: 7.69 s

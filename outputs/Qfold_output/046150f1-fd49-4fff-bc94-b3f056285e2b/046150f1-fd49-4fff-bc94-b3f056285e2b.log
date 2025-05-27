@@ -1,0 +1,184 @@
+2025-05-22 15:16:02.718193: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-22 15:16:02.782532: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-22 15:16:02.783253: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-05-22 15:16:03.858044: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+###################################################################
+##                             QFOLD                             ##
+##                                                               ##
+## Tool that combines AI and QC to solve protein folding problem ##
+###################################################################
+
+
+## 3D STRUCTURE CALCULATOR FOR glycylglycine with 2 bits and minifold initialization ##
+
+                                                              ┌──────────────┐»
+   ancilla_0: ────────────────────────────────────────────────┤0             ├»
+                                                              │              │»
+   ancilla_1: ────────────────────────────────────────────────┤1             ├»
+                                                              │              │»
+   ancilla_2: ────────────────────────────────────────────────┤2             ├»
+                                                              │              │»
+   ancilla_3: ────────────────────────────────────────────────┤3             ├»
+                                                              │              │»
+   ancilla_4: ────────────────────────────────────────────────┤4             ├»
+                                                              │              │»
+   ancilla_5: ────────────────────────────────────────────────┤5             ├»
+                                                              │              │»
+   ancilla_6: ────────────────────────────────────────────────┤6             ├»
+                                                              │   circuit-35 │»
+      coin_0: ────────────────────────────────────────────────┤7             ├»
+                                                              │              │»
+move_value_0: ────────────────────────────────────────────────┤8             ├»
+                                                              │              │»
+   move_id_0: ────────────────────────────────────────────────┤9             ├»
+              ┌──────────────────────────────────────────────┐│              │»
+    angle1_0: ┤0                                             ├┤10            ├»
+              │  Initialize(0.69834,0.46462,0.28385,0.46462) ││              │»
+    angle1_1: ┤1                                             ├┤11            ├»
+              ├──────────────────────────────────────────────┤│              │»
+    angle0_0: ┤0                                             ├┤12            ├»
+              │  Initialize(0.69834,0.46462,0.28385,0.46462) ││              │»
+    angle0_1: ┤1                                             ├┤13            ├»
+              └──────────────────────────────────────────────┘└──────────────┘»
+«              ┌──────────────┐ ░ ┌──────────────┐ ░ ┌──────────────┐ ░ »
+«   ancilla_0: ┤0             ├─░─┤0             ├─░─┤0             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«   ancilla_1: ┤1             ├─░─┤1             ├─░─┤1             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«   ancilla_2: ┤2             ├─░─┤2             ├─░─┤2             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«   ancilla_3: ┤3             ├─░─┤3             ├─░─┤3             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«   ancilla_4: ┤4             ├─░─┤4             ├─░─┤4             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«   ancilla_5: ┤5             ├─░─┤5             ├─░─┤5             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«   ancilla_6: ┤6             ├─░─┤6             ├─░─┤6             ├─░─»
+«              │   circuit-54 │ ░ │   circuit-73 │ ░ │   circuit-92 │ ░ »
+«      coin_0: ┤7             ├─░─┤7             ├─░─┤7             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«move_value_0: ┤8             ├─░─┤8             ├─░─┤8             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«   move_id_0: ┤9             ├─░─┤9             ├─░─┤9             ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«    angle1_0: ┤10            ├─░─┤10            ├─░─┤10            ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«    angle1_1: ┤11            ├─░─┤11            ├─░─┤11            ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«    angle0_0: ┤12            ├─░─┤12            ├─░─┤12            ├─░─»
+«              │              │ ░ │              │ ░ │              │ ░ »
+«    angle0_1: ┤13            ├─░─┤13            ├─░─┤13            ├─░─»
+«              └──────────────┘ ░ └──────────────┘ ░ └──────────────┘ ░ »
+«              ┌───────────────┐ ░ ┌───────────────┐ ░ ┌───────────────┐ ░ »
+«   ancilla_0: ┤0              ├─░─┤0              ├─░─┤0              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«   ancilla_1: ┤1              ├─░─┤1              ├─░─┤1              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«   ancilla_2: ┤2              ├─░─┤2              ├─░─┤2              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«   ancilla_3: ┤3              ├─░─┤3              ├─░─┤3              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«   ancilla_4: ┤4              ├─░─┤4              ├─░─┤4              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«   ancilla_5: ┤5              ├─░─┤5              ├─░─┤5              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«   ancilla_6: ┤6              ├─░─┤6              ├─░─┤6              ├─░─»
+«              │   circuit-111 │ ░ │   circuit-130 │ ░ │   circuit-149 │ ░ »
+«      coin_0: ┤7              ├─░─┤7              ├─░─┤7              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«move_value_0: ┤8              ├─░─┤8              ├─░─┤8              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«   move_id_0: ┤9              ├─░─┤9              ├─░─┤9              ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«    angle1_0: ┤10             ├─░─┤10             ├─░─┤10             ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«    angle1_1: ┤11             ├─░─┤11             ├─░─┤11             ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«    angle0_0: ┤12             ├─░─┤12             ├─░─┤12             ├─░─»
+«              │               │ ░ │               │ ░ │               │ ░ »
+«    angle0_1: ┤13             ├─░─┤13             ├─░─┤13             ├─░─»
+«              └───────────────┘ ░ └───────────────┘ ░ └───────────────┘ ░ »
+«              ┌───────────────┐ ░ ┌───────────────┐ ░ 
+«   ancilla_0: ┤0              ├─░─┤0              ├─░─
+«              │               │ ░ │               │ ░ 
+«   ancilla_1: ┤1              ├─░─┤1              ├─░─
+«              │               │ ░ │               │ ░ 
+«   ancilla_2: ┤2              ├─░─┤2              ├─░─
+«              │               │ ░ │               │ ░ 
+«   ancilla_3: ┤3              ├─░─┤3              ├─░─
+«              │               │ ░ │               │ ░ 
+«   ancilla_4: ┤4              ├─░─┤4              ├─░─
+«              │               │ ░ │               │ ░ 
+«   ancilla_5: ┤5              ├─░─┤5              ├─░─
+«              │               │ ░ │               │ ░ 
+«   ancilla_6: ┤6              ├─░─┤6              ├─░─
+«              │   circuit-168 │ ░ │   circuit-187 │ ░ 
+«      coin_0: ┤7              ├─░─┤7              ├─░─
+«              │               │ ░ │               │ ░ 
+«move_value_0: ┤8              ├─░─┤8              ├─░─
+«              │               │ ░ │               │ ░ 
+«   move_id_0: ┤9              ├─░─┤9              ├─░─
+«              │               │ ░ │               │ ░ 
+«    angle1_0: ┤10             ├─░─┤10             ├─░─
+«              │               │ ░ │               │ ░ 
+«    angle1_1: ┤11             ├─░─┤11             ├─░─
+«              │               │ ░ │               │ ░ 
+«    angle0_0: ┤12             ├─░─┤12             ├─░─
+«              │               │ ░ │               │ ░ 
+«    angle0_1: ┤13             ├─░─┤13             ├─░─
+«              └───────────────┘ ░ └───────────────┘ ░ /home/texsols/miniconda3/envs/qfold38/lib/python3.8/site-packages/qiskit/circuit/equivalence.py:18: DeprecationWarning: The retworkx package is deprecated and has been renamed to rustworkx. Rustworkx is a drop-in replacement and can be used by replacing `import retworkx` with import `rustworkx`. 
+  import retworkx as rx
+/home/texsols/miniconda3/envs/qfold38/lib/python3.8/site-packages/qiskit/version.py:20: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+/home/texsols/miniconda3/envs/qfold38/lib/python3.8/site-packages/qiskit/aqua/__init__.py:86: DeprecationWarning: The package qiskit.aqua is deprecated. It was moved/refactored to qiskit-terra For more information see <https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide>
+  warn_package('aqua', 'qiskit-terra')
+/home/texsols/miniconda3/envs/qfold38/lib/python3.8/site-packages/qiskit/circuit/quantumcircuit.py:933: DeprecationWarning: The QuantumCircuit.combine() method is being deprecated. Use the compose() method which is more flexible w.r.t circuit register compatibility.
+  return self.combine(rhs)
+
+<i> QUANTUM METROPOLIS: Time for 10 steps: 41.21670198440552 seconds ( 39.758068323135376 seconds statevector)
+<i> CLASSICAL METROPOLIS: Time for 2 steps: 4.372830867767334 seconds
+<i> CLASSICAL METROPOLIS: Time for 3 steps: 4.5582194328308105 seconds
+<i> CLASSICAL METROPOLIS: Time for 4 steps: 4.790421009063721 seconds
+<i> CLASSICAL METROPOLIS: Time for 5 steps: 4.964772701263428 seconds
+<i> CLASSICAL METROPOLIS: Time for 6 steps: 5.067176342010498 seconds
+<i> CLASSICAL METROPOLIS: Time for 7 steps: 5.294438600540161 seconds
+<i> CLASSICAL METROPOLIS: Time for 8 steps: 5.294855833053589 seconds
+<i> CLASSICAL METROPOLIS: Time for 9 steps: 5.5097815990448 seconds
+
+
+********************************************************
+**       RESULTS for glycylglycine with 2 bits       **
+********************************************************
+**                                                    **
+** Quantum Metropolis   => Min TTS: 78.6966070327 at step: 2  **
+** Classical Metropolis => Min TTS: 39.0849018730 at step: 3  **
+
+>> Total Qubits Required: 2 for 2 amino acids
+
+<!> Warning: No angle data found to build the VQE circuit.
+
+>> Supported amino acids:
+Ala, Arg, Asn, Asp, Cys, Gln, Glu, Gly, His, Ile, Leu, Lys, Met, Phe, Pro, Ser, Thr, Trp, Tyr, Val
+
+<!> Warning: Unsupported amino acids detected: G, G
+**                                                    **
+** -------------------------------------------------- **
+**                                                    **
+** Execution time     => 0:01:21.081074  in hh:mm:ss  **
+********************************************************
+
+
+
+## Circuit and Qubit Scaling Analysis ##
+
+>> Sequence Length: 2 | Amino Acids: GG
+   Required Qubits: 2
+   Saved circuit to: circuit_outputs/vqe_circuit_len2.png
+   Time taken: 0.4256 seconds
+
+### Qubit Scaling and Timing Summary ###
+ Seq Len |  Qubits |  Time (s)
+------------------------------
+       2 |       2 |    0.4256

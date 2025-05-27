@@ -1,87 +1,29 @@
 nohup: ignoring input
  * Serving Flask app 'app'
  * Debug mode: on
-2025-05-06 17:57:25,762 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-05-27 18:43:11,486 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5050
  * Running on http://10.2.0.5:5050
-2025-05-06 17:57:25,763 - INFO - [33mPress CTRL+C to quit[0m
-2025-05-06 17:57:25,764 - INFO -  * Restarting with stat
-2025-05-06 17:57:26,351 - WARNING -  * Debugger is active!
-2025-05-06 17:57:26,352 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:01:02,598 - INFO -  * Detected change in '/home/texsols/QuantBio/backend/routes/vqe.py', reloading
-2025-05-06 18:01:02,681 - INFO -  * Restarting with stat
-2025-05-06 18:01:03,254 - WARNING -  * Debugger is active!
-2025-05-06 18:01:03,254 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:01:37,461 - INFO -  * Detected change in '/home/texsols/QuantBio/backend/services/vqe_service.py', reloading
-2025-05-06 18:01:37,548 - INFO -  * Restarting with stat
-2025-05-06 18:01:38,131 - WARNING -  * Debugger is active!
-2025-05-06 18:01:38,131 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:01:46,191 - INFO -  * Detected change in '/home/texsols/QuantBio/backend/services/vqe_service.py', reloading
-2025-05-06 18:01:46,297 - INFO -  * Restarting with stat
-2025-05-06 18:01:46,898 - WARNING -  * Debugger is active!
-2025-05-06 18:01:46,898 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:01:57,990 - INFO -  * Detected change in '/home/texsols/QuantBio/backend/services/vqe_service.py', reloading
-2025-05-06 18:01:58,101 - INFO -  * Restarting with stat
-2025-05-06 18:01:58,713 - WARNING -  * Debugger is active!
-2025-05-06 18:01:58,713 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:02:43,991 - INFO -  * Detected change in '/home/texsols/QuantBio/algorithms/protein-folding/solution.py', reloading
-2025-05-06 18:02:44,096 - INFO -  * Restarting with stat
-2025-05-06 18:02:44,696 - WARNING -  * Debugger is active!
-2025-05-06 18:02:44,696 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:02:45,715 - INFO -  * Detected change in '/home/texsols/QuantBio/algorithms/protein-folding/solution.py', reloading
-2025-05-06 18:02:45,808 - INFO -  * Restarting with stat
-2025-05-06 18:02:46,394 - WARNING -  * Debugger is active!
-2025-05-06 18:02:46,394 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:04:35,361 - INFO - Running VQE with task ID: d89253dc-8a6f-4a1e-911e-dcdce2fe8da0 for sequence: YTDPET
-2025-05-06 18:04:35,362 - INFO - Executing VQE command:
+2025-05-27 18:43:11,486 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-27 18:43:11,488 - INFO -  * Restarting with stat
+2025-05-27 18:43:12,097 - WARNING -  * Debugger is active!
+2025-05-27 18:43:12,098 - INFO -  * Debugger PIN: 108-704-251
+2025-05-27 18:44:01,056 - INFO - Running VQE with task ID: e6932729-c201-4253-b928-277352060b3c for sequence: YTDPET
+2025-05-27 18:44:01,799 - INFO - Executing VQE command:
 
     source ~/miniconda3/etc/profile.d/conda.sh &&
     conda activate proteinfoldingvqe &&
     cd /home/texsols/QuantBio/algorithms/protein-folding &&
-    python3 main.py --sequence "YTDPET" --out_dir "/home/texsols/QuantBio/outputs/vqe_output/d89253dc-8a6f-4a1e-911e-dcdce2fe8da0" > "/home/texsols/QuantBio/outputs/vqe_output/d89253dc-8a6f-4a1e-911e-dcdce2fe8da0/d89253dc-8a6f-4a1e-911e-dcdce2fe8da0.log" 2>&1
+    python3 solution.py --sequence "YTDPET" --out_dir "/home/texsols/QuantBio/outputs/vqe_output/e6932729-c201-4253-b928-277352060b3c" > "/home/texsols/QuantBio/outputs/vqe_output/e6932729-c201-4253-b928-277352060b3c/e6932729-c201-4253-b928-277352060b3c.log" 2>&1
     
-2025-05-06 18:04:36,176 - INFO - 127.0.0.1 - - [06/May/2025 18:04:36] "POST /vqe/predict HTTP/1.1" 200 -
-2025-05-06 18:08:08,304 - INFO -  * Detected change in '/home/texsols/QuantBio/algorithms/protein-folding/solution.py', reloading
-2025-05-06 18:08:08,387 - INFO -  * Restarting with stat
-2025-05-06 18:08:09,047 - WARNING -  * Debugger is active!
-2025-05-06 18:08:09,048 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:09:51,670 - INFO -  * Detected change in '/home/texsols/QuantBio/algorithms/protein-folding/EnergyTable.py', reloading
-2025-05-06 18:09:51,761 - INFO -  * Restarting with stat
-2025-05-06 18:09:52,335 - WARNING -  * Debugger is active!
-2025-05-06 18:09:52,336 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:13:09,042 - INFO - Running VQE with task ID: 3f1dd57b-2b8f-4331-9f73-3a5815c717f8 for sequence: YTDPET
-2025-05-06 18:13:09,042 - INFO - Executing VQE command:
+2025-05-27 18:44:29,481 - INFO - 127.0.0.1 - - [27/May/2025 18:44:29] "POST /vqe/predict HTTP/1.1" 200 -
+2025-05-27 18:57:21,024 - INFO - Running VQE with task ID: f9b6f929-5c2f-47a3-938e-0b43267e8e19 for sequence: YTDPET
+2025-05-27 18:57:21,025 - INFO - Executing VQE command:
 
     source ~/miniconda3/etc/profile.d/conda.sh &&
     conda activate proteinfoldingvqe &&
     cd /home/texsols/QuantBio/algorithms/protein-folding &&
-    python3 main.py --sequence "YTDPET" --out_dir "/home/texsols/QuantBio/outputs/vqe_output/3f1dd57b-2b8f-4331-9f73-3a5815c717f8" > "/home/texsols/QuantBio/outputs/vqe_output/3f1dd57b-2b8f-4331-9f73-3a5815c717f8/3f1dd57b-2b8f-4331-9f73-3a5815c717f8.log" 2>&1
+    python3 solution.py --sequence "YTDPET" --out_dir "/home/texsols/QuantBio/outputs/vqe_output/f9b6f929-5c2f-47a3-938e-0b43267e8e19" > "/home/texsols/QuantBio/outputs/vqe_output/f9b6f929-5c2f-47a3-938e-0b43267e8e19/f9b6f929-5c2f-47a3-938e-0b43267e8e19.log" 2>&1
     
-2025-05-06 18:13:09,803 - INFO - 127.0.0.1 - - [06/May/2025 18:13:09] "POST /vqe/predict HTTP/1.1" 200 -
-2025-05-06 18:13:58,849 - INFO -  * Detected change in '/home/texsols/QuantBio/backend/services/vqe_service.py', reloading
-2025-05-06 18:13:58,933 - INFO -  * Restarting with stat
-2025-05-06 18:13:59,485 - WARNING -  * Debugger is active!
-2025-05-06 18:13:59,485 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:14:07,682 - INFO - Running VQE with task ID: 0cfb7ca8-7265-4b82-b74a-eda5adf8be0c for sequence: YTDPET
-2025-05-06 18:14:07,682 - INFO - Executing VQE command:
-
-    source ~/miniconda3/etc/profile.d/conda.sh &&
-    conda activate proteinfoldingvqe &&
-    cd /home/texsols/QuantBio/algorithms/protein-folding &&
-    python3 main.py --sequence "YTDPET" --out_dir "/home/texsols/QuantBio/outputs/vqe_output/0cfb7ca8-7265-4b82-b74a-eda5adf8be0c" > "/home/texsols/QuantBio/outputs/vqe_output/0cfb7ca8-7265-4b82-b74a-eda5adf8be0c/0cfb7ca8-7265-4b82-b74a-eda5adf8be0c.log" 2>&1
-    
-2025-05-06 18:14:08,446 - INFO - 127.0.0.1 - - [06/May/2025 18:14:08] "POST /vqe/predict HTTP/1.1" 200 -
-2025-05-06 18:14:58,830 - INFO -  * Detected change in '/home/texsols/QuantBio/backend/services/vqe_service.py', reloading
-2025-05-06 18:14:58,921 - INFO -  * Restarting with stat
-2025-05-06 18:14:59,488 - WARNING -  * Debugger is active!
-2025-05-06 18:14:59,488 - INFO -  * Debugger PIN: 745-691-435
-2025-05-06 18:15:04,236 - INFO - Running VQE with task ID: 5e0d336e-beb3-47df-8707-b4a1e444d253 for sequence: YTDPET
-2025-05-06 18:15:04,236 - INFO - Executing VQE command:
-
-    source ~/miniconda3/etc/profile.d/conda.sh &&
-    conda activate proteinfoldingvqe &&
-    cd /home/texsols/QuantBio/algorithms/protein-folding &&
-    python3 solution.py --sequence "YTDPET" --out_dir "/home/texsols/QuantBio/outputs/vqe_output/5e0d336e-beb3-47df-8707-b4a1e444d253" > "/home/texsols/QuantBio/outputs/vqe_output/5e0d336e-beb3-47df-8707-b4a1e444d253/5e0d336e-beb3-47df-8707-b4a1e444d253.log" 2>&1
-    
-2025-05-06 18:15:16,540 - INFO - 127.0.0.1 - - [06/May/2025 18:15:16] "POST /vqe/predict HTTP/1.1" 200 -
+2025-05-27 18:57:32,402 - INFO - 127.0.0.1 - - [27/May/2025 18:57:32] "POST /vqe/predict HTTP/1.1" 200 -
