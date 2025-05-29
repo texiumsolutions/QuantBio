@@ -1,80 +1,52 @@
-import os
-import logging
-import uuid
-import urllib.parse
-import requests
-from flask import Blueprint, request, jsonify
-from backend.services.vqe_service import run_vqe
-from backend.utils.azure_upload import upload_task_outputs
+API Reference
+=============
 
-vqe_bp = Blueprint("vqe", __name__)
+This section provides documentation for the RESTful API endpoints implemented in the Qubio backend. These APIs expose quantum and classical bioinformatics tools as HTTP services, enabling programmatic access to core functionality.
 
-UPLOAD_FOLDER = "/home/texsols/QuantBio/algorithms/protein-folding/uploads"
-OUTPUT_FOLDER = "/home/texsols/QuantBio/outputs/vqe_output"
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+Each endpoint supports task submission, monitoring, and result retrieval.
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+VQE API
+-------
 
-def download_file(url, save_path):
-    try:
-        response = requests.get(url, stream=True, timeout=10)
-        response.raise_for_status()
-        with open(save_path, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                if chunk:
-                    f.write(chunk)
-        logging.info(f"Downloaded file from URL to {save_path}")
-        return save_path
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Download failed from URL: {url} - {e}")
-        raise Exception(f"Download failed from URL: {url} - {e}")
+**POST** `/predict`  
+Submits a new VQE task using a protein sequence to calculate its ground-state energy via the Variational Quantum Eigensolver algorithm.
 
-@vqe_bp.route("/predict", methods=["POST"])
-def predict():
-    try:
-        task_id = str(uuid.uuid4())
-        sequence = request.form.get("protein_sequence")
+Parameters:
+- `protein_sequence`: (str) Required. Amino acid sequence of the protein.
 
-        if not sequence:
-            logging.error("No protein sequence provided.")
-            return jsonify({"error": "No protein sequence provided."}), 400
+**GET** `/check_status/<task_id>`  
+Checks the status and retrieves logs/output files for a specific VQE task by `task_id`.
 
-        params = {
-            "task_id": task_id,
-            "sequence": sequence
-        }
+This endpoint uses backend logic in:
 
-        logging.info(f"Running VQE with task ID: {task_id} for sequence: {sequence}")
-        result = run_vqe(params)
-        return jsonify(result)
+- `backend/services/vqe_service.py`
+- Upload logic in `backend/utils/azure_upload.py`
 
-    except Exception as e:
-        logging.error(f"Error in predict: {e}", exc_info=True)
-        return jsonify({"error": str(e)}), 500
+➡ For usage strategy and integration details, see:  
+:doc:`tasks/vqe`
 
+---
 
-@vqe_bp.route("/check_status/<task_id>", methods=["GET"])
-def check_status(task_id):
-    try:
-        task_folder = os.path.join(OUTPUT_FOLDER, task_id)
-        log_file = os.path.join(task_folder, f"{task_id}.log")
+QFold API
+---------
 
-        if not os.path.exists(log_file):
-            logging.warning(f"Task ID {task_id} not found.")
-            return jsonify({"error": "Task ID not found"}), 404
+**POST** `/predict`  
+Submits a QFold task that uses quantum algorithms to predict the folded 3D structure of a peptide.
 
-        with open(log_file, "r") as f:
-            logs = f.readlines()
+Parameters:
+- `protein_sequence`: (str) Required. Linear sequence of the peptide.
+- `peptide_name`: (str) Required. Identifier name.
+- `rotation_bits`: (int) Optional. Rotation bit precision (default: 2).
+- `initialization`: (str) Optional. Initial config (`minifold`, `random`).
+- `mode`: (str) Optional. `simulation` or `execution` (default: `simulation`).
 
-        azure_result = upload_task_outputs(task_id, task_folder)
+**GET** `/check_status/<task_id>`  
+Checks the folding status, retrieves logs, and returns downloadable outputs from Azure Blob Storage.
 
-        return jsonify({
-            "task_id": task_id,
-            "logs": logs,
-            "azure_files": azure_result.get("uploaded_files", [])
-        })
+This endpoint uses:
 
-    except Exception as e:
-        logging.error(f"Error in check_status: {e}", exc_info=True)
-        return jsonify({"error": str(e)}), 500
+- `backend/services/qfold_service.py`
+- Upload logic in `backend/utils/azure_upload.py`
+
+➡ For use-case explanations and strategic motivations, refer to:  
+:doc:`tasks/qfold`
