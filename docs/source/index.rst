@@ -3,15 +3,31 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-QuantBio documentation
-======================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+QuantBio Documentation
+===================
 
+Welcome to QuantBio! This documentation provides detailed references for Quantum Machine Learning, Algorithms, and Bioinformatics applications in structural biology.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: General
 
+   general/quantum_machine_learning
+   general/algorithms_and_beyond
+   general/qaoa
+   general/vqe
+   general/qfold
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API
+
+   api_reference
+
+.. toctree::
+   :maxdepth: 2
+   :caption: BioInformatics Tasks
+
+   tasks/vqe
+   tasks/qfold
