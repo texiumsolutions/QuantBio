@@ -31,3 +31,5 @@ Welcome to QuantBio! This documentation provides detailed references for Quantum
 
    tasks/vqe
    tasks/qfold
+   tasks/expt_vqe
+   tasks/expt_modified_hamiltonian
